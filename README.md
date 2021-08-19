@@ -13,7 +13,7 @@ The `data` folder contains four benchmark datasets (Actor, i.e., film, Cornell, 
 ## Results
 Testing accuracy (\%) summarized below.
 | Method | Actor |  Cornell | Texas | Wisconsin |
-|:---:|:---:|:---:|:---:|:---:|
+|:----|:---:|:---:|:---:|:---:|
 | NEDA  | 38.17 |  87.78 | 87.50 | 89.40 |
 | NEDA* | 38.01 |  87.22 | 88.06 | 89.80 |
 
