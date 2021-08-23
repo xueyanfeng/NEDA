@@ -3,8 +3,7 @@ import numpy as np
 import torch
 import os
 import math
-
-from Cadj import adj_set_nettorkx
+import adj_set_nettorkx
 
 def accuracy(logits, labels):
     _, indices = torch.max(logits, dim=1)
