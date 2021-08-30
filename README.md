@@ -26,13 +26,9 @@ python train_NEDA.py --no-cuda --dataset film --sample1 25 --sample2 10 --infect
 ```
 python train_NEDA.py --no-cuda --is_copy --dataset film --sample1 25 --sample2 20 --infected_number 25
 ```
-- To replicate the NEDA result on Cornell, run the following script
+- To replicate the NEDA and NEDA* results on Cornell, run the following script
 ```
-python train_NEDA.py --no-cuda --dataset cornell --sample1 24 --sample2 9 --infected_number 36
-```
-- To replicate the NEDA* result on Cornell, run the following script
-```
-python train_NEDA.py --no-cuda --is_copy --dataset cornell --sample1 18 --sample2 12 --infected_number 36
+sh cornell.sh
 ```
 - To replicate the NEDA and NEDA* results on Texas, run the following script
 ```
