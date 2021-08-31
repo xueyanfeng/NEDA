@@ -18,13 +18,9 @@ Testing accuracy (\%) summarized below.
 | NEDA* | 38.01 |  87.22 | 88.06 | 89.80 |
 
 ## Usage
-- To replicate the NEDA result on Actor, run the following script
+- To replicate the NEDA and NEDA* results on Actor, run the following script
 ```
-python train_NEDA.py --no-cuda --dataset film --sample1 25 --sample2 10 --infected_number 25
-```
-- To replicate the NEDA* result on Actor, run the following script
-```
-python train_NEDA.py --no-cuda --is_copy --dataset film --sample1 25 --sample2 20 --infected_number 25
+sh film.sh
 ```
 - To replicate the NEDA and NEDA* results on Cornell, run the following script
 ```
