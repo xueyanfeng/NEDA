@@ -163,31 +163,5 @@ if __name__ == '__main__':
     result = "./results/"
     plot = "./plot/"
 
-    # grid search for cornell, texas, wisconsin
-    # for s1 in np.linspace(3, 24, 8).astype(np.int32):
-    #     for s2 in np.linspace(3, 24, 8).astype(np.int32):
-    #         for s0 in np.ceil(np.linspace(max(s1, s2), 2 * max(s1, s2), 5)).astype(np.int32):
-    #             args = parser.parse_args(
-    #                 ['--no-cuda', '--similarity', '--is_copy', '--dataset', 'wisconsin', '--sample1', '{}'.format(s1), '--sample2',
-    #                  '{}'.format(s2), '--infected_number', '{}'.format(s0), '--train_percentage', '0.48',
-    #                  '--val_percentage', '0.32'])
-    #             experiment_average(number_experiments)
-
-
-    # grid search for film
-    for s1 in [15,20,25]:
-        for s2 in np.linspace(5, 25, 5).astype(np.int32):
-            for s0 in np.ceil(np.linspace(max(s1, s2), 2 * max(s1, s2), 3)).astype(np.int32):
-                args = parser.parse_args(
-                    ['--no-cuda', '--similarity', '--is_copy', '--dataset', 'film', '--sample1', '{}'.format(s1), '--sample2',
-                     '{}'.format(s2), '--infected_number', '{}'.format(s0), '--train_percentage', '0.48',
-                     '--val_percentage', '0.32'])
-                experiment_average(number_experiments)
-
-    # s0 = 36
-    # s1 = 24
-    # s2 = 3
-    # args = parser.parse_args(['--no-cuda', '--similarity', '--dataset', 'texas', '--sample1', '{}'.format(s1), '--sample2', '{}'.format(s2), '--infected_number', '{}'.format(s0), '--train_percentage', '0.48', '--val_percentage', '0.32'])
-    # experiment_average(number_experiments)
-
+    experiment_average(number_experiments)
     print("finished")
