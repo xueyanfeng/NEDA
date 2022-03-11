@@ -1,4 +1,4 @@
-## NEDA: A Novel Message Passing Neural Network for Disassortative Network Representation Learning
+## NEDA: A Novel Message Passing Neural Network Based on Neighborhood Expansion
 #### Author: [Yanfeng Xue] (xueyanfeng0819@qq.com)
 
 ## Dependencies
