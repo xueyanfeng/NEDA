@@ -12,6 +12,7 @@ The `data` folder contains four benchmark datasets (Actor, i.e., film, Cornell, 
 
 ## Results
 1.   Node classification accuracy(\%) in the 60%, 20% and 20% splits for training, validation, and test splits. 
+
 | Method | Actor |  Cornell | Texas | Wisconsin |
 |:----|:---:|:---:|:---:|:---:|
 | NEDA  | 38.17 |  87.78 | 87.50 | 89.40 |
