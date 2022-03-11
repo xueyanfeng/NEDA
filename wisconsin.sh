@@ -1,2 +1,0 @@
-python train_NEDA.py --no-cuda --dataset wisconsin --sample1 21 --sample2 9 --infected_number 37
-python train_NEDA.py --no-cuda --is_copy --dataset wisconsin --sample1 21 --sample2 3 --infected_number 37
