@@ -11,13 +11,13 @@
 The `data` folder contains four benchmark datasets (Actor, i.e., film, Cornell, Texas and Wisconsin) from [Geom-GCN](https://github.com/graphdml-uiuc-jlu/geom-gcn).
 
 ## Results
-1.Node classification accuracy(\%) in the 60%, 20% and 20% splits for training, validation, and test splits. 
+1 Node classification accuracy(\%) in the 60%, 20% and 20% splits for training, validation, and test splits. 
 | Method | Actor |  Cornell | Texas | Wisconsin |
 |:----|:---:|:---:|:---:|:---:|
 | NEDA  | 38.17 |  87.78 | 87.50 | 89.40 |
 | NEDA* | 38.01 |  87.22 | 88.06 | 89.80 |
 
-2. Node classification accuracy(\%) in the 48%, 32% and 20% splits for training, validation, and test splits. 
+2 Node classification accuracy(\%) in the 48%, 32% and 20% splits for training, validation, and test splits. 
 | Method | Actor |  Cornell | Texas | Wisconsin |
 |:----|:---:|:---:|:---:|:---:|
 | NEDA  | 37.57 |  86.39 | 86.11 | 88.40 |
