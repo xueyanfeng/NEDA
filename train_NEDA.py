@@ -5,6 +5,7 @@ import time
 import argparse
 import numpy as np
 import random
+from tqdm import tqdm
 import pandas as pd
 
 import torch
@@ -124,7 +125,7 @@ def experiment_average(number_experiments):
     t0 = time.time()
     acc_result = []
     enc_list = []
-    for i in range(number_experiments):
+    for i in  tqdm(range(number_experiments)):
         args.seed = i
         # print(args)
         test_acc, extended_neighborhood_coefficient = experiment(args)
@@ -144,7 +145,4 @@ def experiment_average(number_experiments):
 
 if __name__ == '__main__':
     number_experiments = 10
-
-    print("started")
     experiment_average(number_experiments)
-    print("finished")
