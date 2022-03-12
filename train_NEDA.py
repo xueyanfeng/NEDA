@@ -6,7 +6,6 @@ import argparse
 import numpy as np
 import random
 import pandas as pd
-import csv
 
 import torch
 import torch.nn as nn
@@ -114,7 +113,6 @@ def experiment(args):
             print("Epoch {:05d} | Time(s) {:.4f} | Loss {:.4f} | TrainAcc {:.4f} |"
                   " ValAcc {:.4f}".format(epoch, time.time() - t0, train_loss.item(), train_acc, val_acc))
 
-    print()
     if args.early_stop:
         graphsage.load_state_dict(torch.load('es_checkpoint.pt'))
     test_logits = graphsage(test)
@@ -124,44 +122,29 @@ def experiment(args):
 
 def experiment_average(number_experiments):
     t0 = time.time()
-    out_f = open('{}{}_{}_{}_{}_{}.csv'.format(result,
-                                               args.dataset,
-                                               get_excel_name(args.similarity, args.is_copy),
-                                               args.sample1,
-                                               args.sample2,
-                                               args.infected_number), 'w', newline='')
-    writer = csv.writer(out_f)
-    writer.writerow(["s1", "s2", "s0", "accuracy"])
-
     acc_result = []
     enc_list = []
     for i in range(number_experiments):
         args.seed = i
-        print(args)
+        # print(args)
         test_acc, extended_neighborhood_coefficient = experiment(args)
 
         enc_list.append(pd.Series(extended_neighborhood_coefficient).to_frame(str(i)))
         acc_result.append(test_acc)
 
     print()
-    print("{}_{}_Average_accuracy:{} | Time(s) {:.4f}".format(args.dataset,
+    print("{}_{}_Average_accuracy:{:.4f}~{:.4f} | Time(s) {:.4f}".format(args.dataset,
                                                               get_excel_name(args.similarity, args.is_copy),
-                                                              np.array(acc_result).mean(),
+                                                              np.array(acc_result).mean(),np.array(acc_result).std(),
                                                               time.time() - t0))
-    writer.writerow([args.sample1, args.sample2, args.infected_number, np.array(acc_result).mean()])
-    out_f.close()
-
     for i in range(1, number_experiments):
         enc_list[0] = pd.merge(enc_list[0], enc_list[i], left_index=True, right_index=True, how='outer')
-    enc_list[0].to_excel(
-        '{}{}/{}_enc.xlsx'.format(plot, args.dataset, get_excel_name(args.similarity, args.is_copy)))
-    return np.array(acc_result).mean()
+    return round(np.array(acc_result).mean(),4)
 
 
 if __name__ == '__main__':
     number_experiments = 10
-    result = "./results/"
-    plot = "./plot/"
 
+    print("started")
     experiment_average(number_experiments)
     print("finished")
