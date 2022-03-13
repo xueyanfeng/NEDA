@@ -1,4 +1,4 @@
-![NEDA](./plot/SI_propagation.pdf)
+![NEDA](./plot/NEDA.png)
 
 ## A Novel Message Passing Neural Network Based on Neighborhood Expansion
 #### Author: [Yanfeng Xue] (xueyanfeng0819@qq.com)
