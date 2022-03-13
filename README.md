@@ -1,3 +1,7 @@
+![Image text](./plot/SI_propagation.pdf)
+
+===
+
 ## A Novel Message Passing Neural Network Based on Neighborhood Expansion
 #### Author: [Yanfeng Xue] (xueyanfeng0819@qq.com)
 
